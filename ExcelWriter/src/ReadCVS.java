@@ -7,17 +7,22 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
  
 public class ReadCVS {
- 
+
+	private String csvFile;
+	
   public static void main(String[] args) {
- 
-	ReadCVS obj = new ReadCVS();
+	
+	String csvFile = "C:\\InputFile.log";
+	ReadCVS obj = new ReadCVS(csvFile);
 	obj.run();
  
   }
  
+  public ReadCVS(String csvFile){
+	  this.csvFile = csvFile;
+  }
+  
   public void run() {
- 
-	String csvFile = "InputFile.log";
 	BufferedReader br = null;
 	String line="";
 	String cvsSplitBy = "%";
@@ -83,7 +88,6 @@ public class ReadCVS {
   }
   
   public ArrayList<String> getFields(){ //This method is just to populate the fields arraylist
-	  String csvFile = "InputFile.log";
 		BufferedReader br = null;
 		String line="";
 		String cvsSplitBy = "%";
